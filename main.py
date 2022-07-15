@@ -14,7 +14,7 @@ form = Form()
 form.setupUi(window)
 window.show()
 
-path = ''
+
 
 
 def open_file():
@@ -22,7 +22,6 @@ def open_file():
         root = tk.Tk()
         root.withdraw()
         file_path = filedialog.askopenfilename()
-        path = file_path
         file = open(file_path, 'r')
         form.plainTextEdit.clear()
         form.plainTextEdit.insertPlainText(str(file.read()))
@@ -77,5 +76,4 @@ def covariance(xs, ys):
 
 form.pushButton.clicked.connect(open_file)
 form.pushButton_2.clicked.connect(exit)
-form.pushButton_3.clicked.connect(built_graph)
 app.exec_()
